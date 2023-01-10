@@ -10,7 +10,7 @@ const Register = () => {
     console.log(data);
     const resulte = await axios.post("http://localhost:3050/api/users", data);
     console.log(resulte.headers["x-auth-token"]);
-    localStorage.setItem("token", resulte.headers["x-auth-token"]);
+    localStorage.setItem("x-auth-token", resulte.headers["x-auth-token"]);
     navigate("/comments");
   };
 
