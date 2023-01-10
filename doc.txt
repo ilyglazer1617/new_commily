@@ -1,0 +1,8 @@
+routes:
+api/comments GET { get all the comments }
+api/comments POST [{name,body}] { add commnent to the DB }
+api/users POST [{name,password,email}] {new user sign in}
+api/auth POST [{password,email}] {login logic} 
+
+
+functions
