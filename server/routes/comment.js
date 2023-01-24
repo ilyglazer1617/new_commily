@@ -29,4 +29,14 @@ commentRouter.post("/", auth, async (req, res) => {
   }
 });
 
+//!delete by id
+commentRouter.delete("/:id", async (req, res) => {
+  try {
+    const comment = await Comment.findByIdAndRemove(req.params.id);
+    res.status(200).send("this comment deleted" + comment);
+  } catch (error) {
+    res.status(401).send(error);
+  }
+});
+
 module.exports = commentRouter;

@@ -23,7 +23,6 @@ logInRouter.post("/", async (req, res) => {
 
   const password = await bcrypt.compare(req.body.password, user.password);
   if (password) {
-    let token = "email or password wrong";
     token = user.generateJWT();
     return res
       .header("x-auth-token", token)
